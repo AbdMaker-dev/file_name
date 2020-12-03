@@ -1,0 +1,45 @@
+<?php //resource_name_collection
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['ApiPlatform\\Core\\Metadata\\Resource\\ResourceNameCollection'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Metadata\\Resource\\ResourceNameCollection')),
+    ],
+    null,
+    [
+        'ApiPlatform\\Core\\Metadata\\Resource\\ResourceNameCollection' => [
+            'classes' => [
+                [
+                    'App\\Entity\\GroupeCompetence',
+                    'App\\Entity\\Promo',
+                    'App\\Entity\\Tags',
+                    'App\\Entity\\Niveau',
+                    'App\\Entity\\Formateur',
+                    'App\\Entity\\User',
+                    'App\\Entity\\Langue',
+                    'App\\Entity\\StatutLivrable',
+                    'App\\Entity\\BriefPromotions',
+                    'App\\Entity\\Profile',
+                    'App\\Entity\\Referentiel',
+                    'App\\Entity\\EtatBriefGroupes',
+                    'App\\Entity\\Ressource',
+                    'App\\Entity\\LivrablePartiel',
+                    'App\\Entity\\CritereEvaluation',
+                    'App\\Entity\\Apprenant',
+                    'App\\Entity\\GroupeTag',
+                    'App\\Entity\\EtatBrief',
+                    'App\\Entity\\Groupe',
+                    'App\\Entity\\CritereAdmission',
+                    'App\\Entity\\Brief',
+                    'App\\Entity\\ProfileSortie',
+                    'App\\Entity\\LivrableAttendus',
+                    'App\\Entity\\Competence',
+                    'App\\Entity\\LivrableRendu',
+                    'App\\Entity\\Cm',
+                    'App\\Entity\\Admin',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

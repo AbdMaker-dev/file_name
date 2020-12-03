@@ -1,0 +1,54 @@
+<?php //App_Entity_Profile
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\ClassMetadata')),
+        clone ($p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata')),
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Profile',
+                'id',
+                'libelle',
+                'users',
+                'deleted',
+            ],
+            'attributesMetadata' => [
+                [
+                    'id' => $o[1],
+                    'libelle' => $o[2],
+                    'users' => $o[3],
+                    'deleted' => $o[4],
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'profile_user:read',
+                    'user:read',
+                    'profils_id_user:read',
+                ],
+                [
+                    'profile_user:read',
+                    'profile_user:write',
+                    'user:read',
+                    'profils_id_user:read',
+                ],
+                [
+                    'profile_user:read',
+                    'profils_id_user:read',
+                ],
+                [
+                    'profile_user:read',
+                    'profile_user:write',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

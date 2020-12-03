@@ -1,0 +1,56 @@
+<?php //subresource_operations_6c16d07cb7e8980d7b50fdca5cc00646
+
+return [PHP_INT_MAX, [
+    'api_promos_referentiel_get_subresource' => [
+        'property' => 'referentiel',
+        'collection' => false,
+        'resource_class' => 'App\\Entity\\Referentiel',
+        'shortNames' => [
+            'Referentiel',
+            'Promo',
+        ],
+        'identifiers' => [
+            [
+                'id',
+                'App\\Entity\\Promo',
+                true,
+            ],
+        ],
+        'operation_name' => 'referentiel_get_subresource',
+        'route_name' => 'api_promos_referentiel_get_subresource',
+        'path' => '/admin/promos/{id}/referentiel.{_format}',
+        'defaults' => [],
+        'requirements' => [],
+        'options' => [],
+        'host' => '',
+        'schemes' => [],
+        'condition' => '',
+        'controller' => null,
+    ],
+    'api_promos_formateurs_get_subresource' => [
+        'property' => 'formateurs',
+        'collection' => true,
+        'resource_class' => 'App\\Entity\\Formateur',
+        'shortNames' => [
+            'Formateur',
+            'Promo',
+        ],
+        'identifiers' => [
+            [
+                'id',
+                'App\\Entity\\Promo',
+                true,
+            ],
+        ],
+        'operation_name' => 'formateurs_get_subresource',
+        'route_name' => 'api_promos_formateurs_get_subresource',
+        'path' => '/admin/promos/{id}/formateurs.{_format}',
+        'defaults' => [],
+        'requirements' => [],
+        'options' => [],
+        'host' => '',
+        'schemes' => [],
+        'condition' => '',
+        'controller' => null,
+    ],
+]];
