@@ -1,0 +1,123 @@
+<?php
+
+namespace App\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiFilter;
+use Doctrine\Common\Collections\Collection;
+use ApiPlatform\Core\Annotation\ApiResource;
+use App\Repository\GroupeCompetenceRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\BooleanFilter;
+
+/**
+ * @ORM\Entity(repositoryClass=GroupeCompetenceRepository::class)
+ * 
+ * @ApiResource(
+ * attributes={"access_control"="is_granted('ROLE_ADMIN')"},
+ * 
+ * collectionOperations={
+ *      "get"={"access_control"="is_granted('ROLE_ADMIN')"},
+ *      "post"
+ * },
+ * itemOperations={
+ *      "get",
+ *      "put",
+ *      "delete"
+ * },
+ * 
+ * normalizationContext={"groups"={"gp_competence:read"}},
+ * denormalizationContext={"groups"={"profile_user:write"}},
+ * 
+ * attributes={"pagination_items_per_page"=10}
+ * )
+ * @ApiFilter(BooleanFilter::class, properties={"deleted"})
+ */
+class GroupeCompetence
+{
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $libelle;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Competence::class, mappedBy="groupeCompetence")
+     */
+    private $competences;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $deleted;
+
+    public function __construct()
+    {
+        $this->competences = new ArrayCollection();
+    }
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getLibelle(): ?string
+    {
+        return $this->libelle;
+    }
+
+    public function setLibelle(string $libelle): self
+    {
+        $this->libelle = $libelle;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Competence[]
+     */
+    public function getCompetences(): Collection
+    {
+        return $this->competences;
+    }
+
+    public function addCompetence(Competence $competence): self
+    {
+        if (!$this->competences->contains($competence)) {
+            $this->competences[] = $competence;
+            $competence->setGroupeCompetence($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCompetence(Competence $competence): self
+    {
+        if ($this->competences->removeElement($competence)) {
+            // set the owning side to null (unless already changed)
+            if ($competence->getGroupeCompetence() === $this) {
+                $competence->setGroupeCompetence(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getDeleted(): ?bool
+    {
+        return $this->deleted;
+    }
+
+    public function setDeleted(bool $deleted): self
+    {
+        $this->deleted = $deleted;
+
+        return $this;
+    }
+}

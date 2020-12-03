@@ -1,0 +1,132 @@
+<?php //App_Entity_Promo
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\ClassMetadata')),
+        clone ($p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata')),
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Promo',
+                'id',
+                'titre',
+                'langue',
+                'description',
+                'lieu',
+                'refAgate',
+                'fabrique',
+                'dateDebut',
+                'dataFin',
+                'avatare',
+                'referentiel',
+                'groupes',
+                'apprenants',
+                'formateurs',
+                'deleted',
+                'briefs',
+            ],
+            'attributesMetadata' => [
+                [
+                    'id' => $o[1],
+                    'titre' => $o[2],
+                    'langue' => $o[3],
+                    'description' => $o[4],
+                    'lieu' => $o[5],
+                    'refAgate' => $o[6],
+                    'fabrique' => $o[7],
+                    'dateDebut' => $o[8],
+                    'dataFin' => $o[9],
+                    'avatare' => $o[10],
+                    'referentiel' => $o[11],
+                    'groupes' => $o[12],
+                    'apprenants' => $o[13],
+                    'formateurs' => $o[14],
+                    'deleted' => $o[15],
+                    'briefs' => $o[16],
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'promo:read',
+                    'promo_appre_attente:read',
+                ],
+                [
+                    'promo:read',
+                    'promo:write',
+                    'promo_id_ref:write',
+                ],
+                [
+                    'promo:read',
+                    'promo:write',
+                    'promo_id_ref:write',
+                ],
+                [
+                    'promo:read',
+                    'promo:write',
+                    'promo_id_ref:write',
+                ],
+                [
+                    'promo:read',
+                    'promo:write',
+                    'promo_id_ref:write',
+                ],
+                [
+                    'promo:read',
+                    'promo:write',
+                    'promo_id_ref:write',
+                ],
+                [
+                    'promo:read',
+                    'promo:write',
+                    'promo_id_ref:write',
+                ],
+                [
+                    'promo:read',
+                ],
+                [
+                    'promo:read',
+                    'promo:write',
+                    'promo_id_ref:write',
+                ],
+                [
+                    'promo:read',
+                    'promo:write',
+                ],
+                [
+                    'promo:read',
+                    'promo:write',
+                    'promo_id_ref:write',
+                ],
+                [
+                    'promo:read',
+                    'groupe_briefs:read',
+                ],
+                [
+                    'promo:read',
+                ],
+                [
+                    'promo:read',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

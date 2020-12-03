@@ -1,0 +1,84 @@
+<?php //App_Entity_Competence
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\ClassMetadata')),
+        clone ($p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata')),
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Competence',
+                'id',
+                'libelle',
+                'groupeCompetence',
+                'deleted',
+                'niveaux',
+                'referentiels',
+                'briefs',
+            ],
+            'attributesMetadata' => [
+                [
+                    'id' => $o[1],
+                    'libelle' => $o[2],
+                    'groupeCompetence' => $o[3],
+                    'deleted' => $o[4],
+                    'niveaux' => $o[5],
+                    'referentiels' => $o[6],
+                    'briefs' => $o[7],
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'competence:read',
+                    'groupe_briefs:read',
+                    'gp_competence:read',
+                    'referentiel:read',
+                    'ref_gpc_c:read',
+                    'brief:read',
+                ],
+                [
+                    'competence:read',
+                    'groupe_briefs:read',
+                    'competence:write',
+                    'gp_competence:read',
+                    'gp_competence:write',
+                    'referentiel:read',
+                    'ref_gpc_c:read',
+                    'brief:read',
+                    'brief:write',
+                ],
+                [
+                    'ref_gpc_c:read',
+                    'competence:write',
+                    'brief:read',
+                    'brief:write',
+                ],
+                [
+                    'competence:read',
+                    'gp_competence:read',
+                ],
+                [
+                    'competence:read',
+                    'gp_competence:read',
+                    'groupe_briefs:read',
+                    'competence:write',
+                    'gp_competence:write',
+                    'referentiel:read',
+                    'ref_gpc_c:read',
+                    'brief:read',
+                    'brief:write',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

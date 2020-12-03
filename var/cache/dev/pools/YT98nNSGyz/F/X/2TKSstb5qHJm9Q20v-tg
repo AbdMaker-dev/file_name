@@ -1,0 +1,30 @@
+<?php //subresource_operations_d4c431cbdbeb209e8b0e5401b4c1cdde
+
+return [PHP_INT_MAX, [
+    'api_briefs_brief_promotions_get_subresource' => [
+        'property' => 'briefPromotions',
+        'collection' => true,
+        'resource_class' => 'App\\Entity\\BriefPromotions',
+        'shortNames' => [
+            'BriefPromotions',
+            'Brief',
+        ],
+        'identifiers' => [
+            [
+                'id',
+                'App\\Entity\\Brief',
+                true,
+            ],
+        ],
+        'operation_name' => 'brief_promotions_get_subresource',
+        'route_name' => 'api_briefs_brief_promotions_get_subresource',
+        'path' => '/formateur/briefs/{id}/brief_promotions.{_format}',
+        'defaults' => [],
+        'requirements' => [],
+        'options' => [],
+        'host' => '',
+        'schemes' => [],
+        'condition' => '',
+        'controller' => null,
+    ],
+]];

@@ -1,0 +1,106 @@
+<?php //%255BApp%255CEntity%255CPromo%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiFilter'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiFilter')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'repositoryClass' => [
+                'App\\Repository\\PromoRepository',
+            ],
+            'collectionOperations' => [
+                1 => [
+                    'get' => [
+                        'access_control' => 'is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\')',
+                    ],
+                    'promo_princi' => [
+                        'method' => 'GET',
+                        'path' => '/promo/principal',
+                        'security' => 'is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_CM\') or is_granted(\'ROLE_FORMATEUR\')',
+                    ],
+                    'promo_appre_attente' => [
+                        'method' => 'GET',
+                        'path' => '/promo/apprenants/attente',
+                        'security' => 'is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_CM\') or is_granted(\'ROLE_FORMATEUR\')',
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                1 => [
+                    'get' => [
+                        'access_control' => 'is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\')',
+                    ],
+                    'promo_id_princi' => [
+                        'method' => 'GET',
+                        'path' => '/promo/{id}/principal',
+                        'security' => 'is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_CM\') or is_granted(\'ROLE_FORMATEUR\')',
+                    ],
+                    'get_promo_id_ref' => [
+                        'method' => 'GET',
+                        'path' => '/promo/{id}/referentiels',
+                        'security' => 'is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_CM\') or is_granted(\'ROLE_FORMATEUR\')',
+                    ],
+                    'promo_id_appre_attente' => [
+                        'method' => 'GET',
+                        'path' => '/promo/{id}/apprenants/attente',
+                        'security' => 'is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_CM\') or is_granted(\'ROLE_FORMATEUR\')',
+                    ],
+                    'get_promo_id_form' => [
+                        'method' => 'GET',
+                        'path' => '/promo/{id}/formateurs',
+                        'security' => 'is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_CM\') or is_granted(\'ROLE_FORMATEUR\')',
+                    ],
+                    'promo_id_ref' => [
+                        'method' => 'PUT',
+                        'path' => '/promo/{id}/referentiels',
+                        'normalization_context' => [
+                            'groups' => [
+                                'promo_id_ref:read',
+                            ],
+                        ],
+                        'denormalization_context' => [
+                            'groups' => [
+                                'promo_id_ref:write',
+                            ],
+                        ],
+                        'security' => 'is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_CM\') or is_granted(\'ROLE_FORMATEUR\')',
+                    ],
+                ],
+            ],
+            'attributes' => [
+                1 => [
+                    'pagination_items_per_page' => 10,
+                    'route_prefix' => '/admin',
+                    'normalization_context' => [
+                        'groups' => [
+                            'promo:read',
+                        ],
+                    ],
+                    'denormalization_context' => [
+                        'groups' => [
+                            'promo:write',
+                        ],
+                    ],
+                ],
+            ],
+            'filterClass' => [
+                2 => 'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\BooleanFilter',
+            ],
+            'properties' => [
+                2 => [
+                    'deleted',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+    ],
+    []
+); }];
